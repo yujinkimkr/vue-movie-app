@@ -65,11 +65,9 @@ export default {
   methods: {
     isMatch(path) {
       if(!path) return false;
-      console.log(this.$route);
       return path.test(this.$route.fullPath);
     },
     toAbout() {
-      console.log("toabout 실행");
       this.$router.push('/about');
     }
   }

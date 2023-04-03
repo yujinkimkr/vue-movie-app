@@ -10,13 +10,8 @@ import Header from '~/components/HeaderVue';
 import Footer from '~/components/Footer';
 export default {
   components: {
-    Header: Header,
+    Header,
     Footer
   },
-  data() {
-    return {
-
-    }
-  }
 }
 </script>
