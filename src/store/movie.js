@@ -43,7 +43,6 @@ export default {
         // https://www.omdbapi.com/?apikey=7035c60c&s=frozen&page=2
 
         const res = await _fetchMovie({ ...payload, page: 1 });
-        console.log('res', res);
 
         const { Search, totalResults } = res.data;
         commit('updateState', {
@@ -90,13 +89,7 @@ export default {
 
       try {
         const res = await _fetchMovie(payload);
-        console.log('res', res);
-        console.log('res.data', res.data);
         const rates = res.data.Ratings;
-        for (let i = 0; i < rates.length; i++) {
-          console.log(rates[i].Source);
-          console.log(rates[i].Value);
-        }
 
         commit('updateState', {
           theMovie: res.data
