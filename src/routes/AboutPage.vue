@@ -30,6 +30,13 @@ export default {
     }
   },
   computed: {
+    ...mapState('about', [
+      'image',
+      'name',
+      'email',
+      'blog',
+      'phone',
+    ]),
     image() {
       return this.$store.state.about.image;
     },

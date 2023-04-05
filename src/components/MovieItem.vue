@@ -39,9 +39,6 @@ export default {
     this.init();
   },
   methods: {
-    test(id){
-      console.log('testid: ', id);
-    },
     async init() {
       const poster = this.movie.Poster;
       if(!poster || poster === 'N/A'){
