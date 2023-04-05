@@ -43,7 +43,6 @@ export default {
         // https://www.omdbapi.com/?apikey=7035c60c&s=frozen&page=2
 
         const res = await _fetchMovie({ ...payload, page: 1 });
-
         const { Search, totalResults } = res.data;
         commit('updateState', {
           movies: _uniqBy(Search, 'imdbID'),
@@ -109,5 +108,5 @@ export default {
 }
 
 async function _fetchMovie(payload) {
-  return await axios.post('./netlify/functions/movie', payload);
+  return await axios.post('/.netlify/functions/movie', payload)
 }

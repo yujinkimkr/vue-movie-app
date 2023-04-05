@@ -12,19 +12,20 @@ exports.handler = async function (event, context) {
   try {
     const { data } = await axios.get(url);
     if (data.Error) {
+
       return {
         statusCode: 400,
         body: data.Error
-      }
+      };
     }
     return {
       statusCode: 200,
       body: JSON.stringify(data)
-    }
+    };
   } catch (error) {
     return {
       statusCode: error.response.status,
       body: error.message
-    }
+    };
   }
 }
